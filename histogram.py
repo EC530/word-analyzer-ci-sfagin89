@@ -63,7 +63,7 @@ def print_histogram():
 
 def graph_histogram():
     hist_data = pd.Series(data=histogram)
-    hist_data.plot.hist(grid = True, bins=20, rwidth=0.9, color='#607c8e')
+    hist_data.plot.hist(grid=True, bins=20, rwidth=0.9, color='#607c8e')
     plt.title('Number of Occurances of Unique Words')
     # plt.xlable('Occurances')
     # plt.ylable('Words')
