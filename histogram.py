@@ -1,4 +1,6 @@
 import nltk
+import pandas as pd
+# import matplotlib.pyplot as plt
 
 # histogram.py
 # 1/20/22
@@ -58,7 +60,10 @@ def load_histogram(filename):
 def print_histogram():
     for x in histogram:
         print("[%s]" % x, "occurs %d times in the text." % histogram[x])
-        # print("Word: %s and count: %d" % x % histogram[x])
+
+
+# def graph_histogram():
+
 
 # load_histogram('test.txt')
 # print_histogram()
