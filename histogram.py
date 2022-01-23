@@ -45,7 +45,6 @@ def load_histogram(filename):
     with open(filename, 'r') as file:
         for line in file:
             sentence = nltk.word_tokenize(line)
-            # for word in line.split():
             for word in sentence:
                 word_lc = word.lower()
                 if word_lc in histogram:
@@ -62,8 +61,18 @@ def print_histogram():
         print("[%s]" % x, "occurs %d times in the text." % histogram[x])
 
 
-# def graph_histogram():
+def graph_histogram():
+    hist_data = pd.Series(data=histogram)
+    hist_data.plot.hist(grid = True, bins=20, rwidth=0.9, color='#607c8e')
+    plt.title('Number of Occurances of Unique Words')
+    # plt.xlable('Occurances')
+    # plt.ylable('Words')
+    plt.grid(axis='y', alpha=0.75)
+    # Commenting out Show, causes error with current Raspbian Release
+    # plt.show()
 
 
-# load_histogram('test.txt')
-# print_histogram()
+def test_histogram():
+    load_histogram('test.txt')
+    print_histogram()
+    # graph_histogram()
