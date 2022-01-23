@@ -1,6 +1,6 @@
 import nltk
 import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 # histogram.py
 # 1/20/22
