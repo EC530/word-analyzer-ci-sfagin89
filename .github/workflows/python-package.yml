@@ -22,7 +22,6 @@ jobs:
           pip install flake8 pytest
           pip install --user -U nltk
           sudo apt-get install python3-tk
-          python -m nltk.downloader punkt
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with flake8
         run: |

@@ -36,7 +36,7 @@ import nltk
 # Creating empty dictionary for histogram
 # Example of future content {"word1: 24"}, word1 occurs 24 times in text.
 histogram = {}
-# nltk.download('punkt')
+nltk.download('punkt')
 
 
 def load_histogram(filename):
