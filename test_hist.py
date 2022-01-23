@@ -2,5 +2,5 @@ import histogram
 
 # Test file to check functionality of histogram script
 
-load_histogram('test.txt')
-print_histogram()
+histogram.load_histogram('test.txt')
+histogram.print_histogram()
