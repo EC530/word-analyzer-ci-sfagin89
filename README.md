@@ -13,10 +13,8 @@ Repo for the EC530 Project 1 Histogram Project
 
 ## Running the Application
   There are 2 options for running the histogram script
-  Option 1:
-  - Directly from the Python interpreter
-  Option 2:
-  - Imported to a separate Python script
+  - Option 1: Directly from the Python interpreter
+  - Option 2: Imported to a separate Python script
 
 ### Option 1: Directly from the Python Interpreter
 * Step 1: From the CLI, start the python interpreter
