@@ -38,5 +38,5 @@ expected_hist = {
 
 def test_histogram():
     histogram.load_histogram('test.txt')
-    for (key1, key2) in zip(expected_hist, histogram):
-        assert key1 == key2 and expected_hist[key1] == histogram[key2]
+    for (key1, key2) in zip(expected_hist, histogram.histogram):
+        assert key1 == key2 and expected_hist[key1] == histogram.histogram[key2]
