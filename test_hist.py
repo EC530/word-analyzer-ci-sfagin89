@@ -18,7 +18,7 @@ expected_hist = {
 "to": 1,
 "see": 1,
 "if": 1,
-"it": 1,
+"it": 4,
 "reads": 1,
 "in": 1,
 "all": 1,
