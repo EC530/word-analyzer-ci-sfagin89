@@ -87,11 +87,11 @@ def generate_histogram(processed_content):
     for word in processed_content:
         if word in histogram:
             # print("word is already present, increasing count")
-            count = histogram[word_lc]
-            histogram[word_lc] = count + 1
+            count = histogram[word]
+            histogram[word] = count + 1
         else:
             # print("Adding word to histogram")
-            histogram[word_lc] = 1
+            histogram[word] = 1
     return histogram
 
 def load_histogram(filename):
