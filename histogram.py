@@ -51,7 +51,8 @@ nltk.download('punkt')
 def verify_file(filename):
     if filename.lower().endswith('.txt'):
         return "txt"
-    else return "Sorry that is an unsupported file type"
+    else:
+        return "Sorry that is an unsupported file type"
 
 # Takes in a text file, loads all of the words into a list and returns it.
 # NLTK used to seperate punctuation from words. Still in the list.
