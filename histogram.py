@@ -40,6 +40,7 @@ import matplotlib.pyplot as plt
 # Example of future content {"word1: 24"}, word1 occurs 24 times in text.
 histogram = {}
 nltk.download('punkt')
+nltk.download('stopwords')
 
 # Seperating into Modules based on Functionality
 # File Input/Read Module | Histogram Processing Module | Text Display Module
