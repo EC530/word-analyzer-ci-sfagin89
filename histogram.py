@@ -98,7 +98,7 @@ def generate_histogram(processed_content):
             histogram[word] = 1
     return histogram
 
-# Standalon function that takes a filename and processes the contents to load a
+# Standalone function that takes a filename and processes the contents to load a
 # histogram.
 # Handles everything except printing the resulting histogram.
 def load_histogram(filename):
@@ -127,21 +127,16 @@ def display_histogram(filled_histogram):
     for x in filled_histogram:
         print("[%s]" % x, "occurs %d times in the text." % filled_histogram[x])
 
-
-def graph_histogram():
-    hist_data = pd.Series(data=global_histogram)
-    hist_data.plot.hist(grid=True, bins=20, rwidth=0.9, color='#607c8e')
-    plt.title('Number of Occurances of Unique Words')
+# Commented out to prevent use
+# def graph_histogram():
+    # hist_data = pd.Series(data=global_histogram)
+    # hist_data.plot.hist(grid=True, bins=20, rwidth=0.9, color='#607c8e')
+    # plt.title('Number of Occurances of Unique Words')
     # plt.xlable('Occurances')
     # plt.ylable('Words')
-    plt.grid(axis='y', alpha=0.75)
+    # plt.grid(axis='y', alpha=0.75)
     # Commenting out Show, causes error with current Raspbian Release
     # plt.show()
-
-# def test_histogram():
-    # load_histogram('test.txt')
-    # print_histogram()
-    # graph_histogram()
 
 if __name__ == '__main__':
     default_file = "test.txt"
@@ -167,8 +162,3 @@ if __name__ == '__main__':
     histogram = generate_histogram(content_processed)
 
     display_histogram(histogram)
-
-#3def test_histogram():
-    # load_histogram('test.txt')
-    # print_histogram()
-    # graph_histogram()
