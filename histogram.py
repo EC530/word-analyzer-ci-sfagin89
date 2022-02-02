@@ -2,6 +2,7 @@ import nltk
 from nltk.corpus import stopwords
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 
 # histogram.py
 # 1/20/22
@@ -16,9 +17,11 @@ import matplotlib.pyplot as plt
 # dictionary, and incrementing value of existing dictionary keys.
 # Prints all the keys in the dictionary along with the number of occurances of
 # that key.
+# Is now case-insensitive
+# NLTK stop words are filtered out.
 #
 # To Be Implemented:
-# Currenty is case sensitive, change to case-insensitive
+# Filter out punctuation
 # Display the histogram.
 #
 # To Run:
@@ -138,14 +141,19 @@ if __name__ == '__main__':
     supported_types = ['txt']
     histogram = {}
 
-    file_verified = verify_file(default_file)
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+    else:
+        filename = default_file
+
+    file_verified = verify_file(filename)
 
     if file_verified not in supported_types:
         print(file_verified)
         exit()
 
     if file_verified == "txt":
-         file_content = read_txt(default_file)
+         file_content = read_txt(filename)
 
     content_processed = process_content(file_content)
 
