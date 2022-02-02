@@ -6,7 +6,7 @@ import itertools
 
 # Expected test file histogram results
 expected_list = [
-"this",
+"This",
 "is",
 "a",
 "test",
@@ -29,11 +29,22 @@ expected_list = [
 "count",
 "occurrences",
 ".",
+"this",
+"is",
+"the",
 "second",
 "occurrence",
+"of",
+"the",
 "word",
+"and",
+"a",
+"test",
+"of",
+",",
 "punctuation",
-"removal"
+"removal",
+"."
 ]
 
 def test_readtxt():
