@@ -1,7 +1,7 @@
 import nltk
 from nltk.corpus import stopwords
-import pandas as pd
-import matplotlib.pyplot as plt
+# import pandas as pd
+# import matplotlib.pyplot as plt
 import sys
 
 # histogram.py
@@ -48,7 +48,6 @@ nltk.download('stopwords')
 # Seperating into Modules based on Functionality
 # File Input/Read Module | Histogram Processing Module | Text Display Module
 
-# Module 1: File Input/Read Functionality
 
 # Takes in a file name, checks if it's a valid format, then returns either the
 # file type for supported types, or False for unsupported types.
@@ -57,6 +56,7 @@ def verify_file(filename):
         return "txt"
     else:
         return "Sorry that is an unsupported file type"
+
 
 # Takes in a text file, loads all of the words into a list and returns it.
 # NLTK used to seperate punctuation from words. Still in the list.
@@ -69,6 +69,7 @@ def read_txt(txt_file):
                 file_content.append(word)
     return file_content
 
+
 # Takes a list of words, converts them to lower case, filters out NLTK stop
 # words, and returns the remaining list of words.
 def process_content(file_content):
@@ -80,6 +81,7 @@ def process_content(file_content):
         if word_lc not in stop_words:
             processed_content.append(word_lc)
     return processed_content
+
 
 # Takes a list of processed words and generates histogram consisting of key/val
 # pairs.
@@ -98,6 +100,7 @@ def generate_histogram(processed_content):
             histogram[word] = 1
     return histogram
 
+
 # Standalone function that takes a filename and processes the contents to load a
 # histogram.
 # Handles everything except printing the resulting histogram.
@@ -115,17 +118,20 @@ def load_histogram(filename):
                     # print("Adding word to histogram")
                     global_histogram[word_lc] = 1
 
+
 # Prints value of global histogram variable.
 # Used in conjunction with load_histogram
 def print_histogram():
     for x in global_histogram:
         print("[%s]" % x, "occurs %d times in the text." % global_histogram[x])
 
+
 # Prints value of dictionary paramater
 # Called by main, meant to be used with other modular functions
 def display_histogram(filled_histogram):
     for x in filled_histogram:
         print("[%s]" % x, "occurs %d times in the text." % filled_histogram[x])
+
 
 # Commented out to prevent use
 # def graph_histogram():
@@ -137,6 +143,7 @@ def display_histogram(filled_histogram):
     # plt.grid(axis='y', alpha=0.75)
     # Commenting out Show, causes error with current Raspbian Release
     # plt.show()
+
 
 if __name__ == '__main__':
     default_file = "test.txt"
