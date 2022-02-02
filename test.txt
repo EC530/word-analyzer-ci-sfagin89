@@ -1,0 +1,5 @@
+This is a test of the histogram
+file, to see if it reads in all words
+and can then count occurrences.
+this is the second occurrence of the word and
+a test of, punctuation removal.
