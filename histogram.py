@@ -41,7 +41,7 @@ import sys
 
 # Creating empty dictionary for histogram
 # Example of future content {"word1: 24"}, word1 occurs 24 times in text.
-histogram = {}
+global_histogram = {}
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -98,31 +98,38 @@ def generate_histogram(processed_content):
             histogram[word] = 1
     return histogram
 
+# Standalon function that takes a filename and processes the contents to load a
+# histogram.
+# Handles everything except printing the resulting histogram.
 def load_histogram(filename):
     with open(filename, 'r') as file:
         for line in file:
             sentence = nltk.word_tokenize(line)
             for word in sentence:
                 word_lc = word.lower()
-                if word_lc in histogram:
-                    print("word is already present, increasing count")
-                    count = histogram[word_lc]
-                    histogram[word_lc] = count + 1
+                if word_lc in global_histogram:
+                    # print("word is already present, increasing count")
+                    count = global_histogram[word_lc]
+                    global_histogram[word_lc] = count + 1
                 else:
-                    print("Adding word to histogram")
-                    histogram[word_lc] = 1
+                    # print("Adding word to histogram")
+                    global_histogram[word_lc] = 1
 
+# Prints value of global histogram variable.
+# Used in conjunction with load_histogram
 def print_histogram():
-    for x in histogram:
-        print("[%s]" % x, "occurs %d times in the text." % histogram[x])
+    for x in global_histogram:
+        print("[%s]" % x, "occurs %d times in the text." % global_histogram[x])
 
+# Prints value of dictionary paramater
+# Called by main, meant to be used with other modular functions
 def display_histogram(filled_histogram):
     for x in filled_histogram:
         print("[%s]" % x, "occurs %d times in the text." % filled_histogram[x])
 
 
 def graph_histogram():
-    hist_data = pd.Series(data=histogram)
+    hist_data = pd.Series(data=global_histogram)
     hist_data.plot.hist(grid=True, bins=20, rwidth=0.9, color='#607c8e')
     plt.title('Number of Occurances of Unique Words')
     # plt.xlable('Occurances')
@@ -131,9 +138,9 @@ def graph_histogram():
     # Commenting out Show, causes error with current Raspbian Release
     # plt.show()
 
-def test_histogram():
-    load_histogram('test.txt')
-    print_histogram()
+# def test_histogram():
+    # load_histogram('test.txt')
+    # print_histogram()
     # graph_histogram()
 
 if __name__ == '__main__':
@@ -161,7 +168,7 @@ if __name__ == '__main__':
 
     display_histogram(histogram)
 
-def test_histogram():
-    load_histogram('test.txt')
-    print_histogram()
+#3def test_histogram():
+    # load_histogram('test.txt')
+    # print_histogram()
     # graph_histogram()
