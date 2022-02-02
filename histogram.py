@@ -162,7 +162,7 @@ if __name__ == '__main__':
         exit()
 
     if file_verified == "txt":
-         file_content = read_txt(filename)
+        file_content = read_txt(filename)
 
     content_processed = process_content(file_content)
 
