@@ -68,6 +68,6 @@ expected_output = [
 ]
 
 def test_processing():
-    resulting_output.process_content(input_list)
+    resulting_output = histogram.process_content(input_list)
     for (word1, word2) in zip(expected_output, resulting_output):
         assert word1 == word2
